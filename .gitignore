@@ -1,0 +1,8 @@
+# AegisPass Git Ignore
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.task-logs/
+coverage/

@@ -1,0 +1,6 @@
+{
+  "name": "AegisPass - Secure High-Demand Ticketing Platform",
+  "description": "Production-grade, zero-oversell ticket booking platform with atomic row-level reservation locking, tamper-resistant HMAC QR passes, anti-bot burst shielding, and real-time inventory synchronization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

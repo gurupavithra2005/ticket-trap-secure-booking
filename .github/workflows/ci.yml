@@ -1,0 +1,34 @@
+name: AegisPass Automated Evaluation & CI Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  audit-and-test:
+    name: Automated Evaluation Criteria Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: 1. Code Quality & Type Check
+        run: npm run lint
+
+      - name: 2. Security & Concurrency Verification Test Suite
+        run: npm test
+
+      - name: 3. Production Build & Bundle Optimization
+        run: npm run build
